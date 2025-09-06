@@ -17,6 +17,7 @@ public class WeatherService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
+
     @Cacheable(value = "weather", key = "#city")
     public WeatherResponse getWeather(String city){
         String url = apiUrl + "/" + city + "?unitGroup=us&key=" + apiKey + "&contentType=json";
